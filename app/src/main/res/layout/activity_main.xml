@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <SearchView
+        android:id="@+id/source_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Source"
+        android:iconifiedByDefault="false"
+        android:elevation="5dp"
+        app:layout_constraintTop_toTopOf="@id/map"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_round"/>
+    <SearchView
+        android:id="@+id/destination_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Destination"
+        android:iconifiedByDefault="false"
+        android:elevation="5dp"
+        app:layout_constraintTop_toTopOf="@id/map"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_round"
+        android:layout_below="@id/source_location"/>
+
+
+    <Button
+        android:id="@+id/search_route_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/destination_location"
+        android:text="@string/search_route"
+        android:layout_alignParentEnd="true"
+        />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:id="@+id/distanceTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_route_button"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/bg_round"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/map"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:text="dfgdfsfggddfgdfdf"/>
+
+</RelativeLayout>
